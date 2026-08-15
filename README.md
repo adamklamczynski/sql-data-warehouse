@@ -20,5 +20,7 @@ Prerequisites
  * Client Tool: SQL Server Management Studio (SSMS) or Azure Data Studio
  * Permissions: Sufficient privileges to execute TRUNCATE TABLE and BULK INSERT operations.
 
+---
+
 ## 📝 License
 This project is open-source and available under the MIT License.
