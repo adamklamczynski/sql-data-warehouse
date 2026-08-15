@@ -29,13 +29,12 @@ BEGIN
 		PRINT '	   Loading CRM Tables';
 		PRINT '--------------------------------';
 
-		--Cleaning table
+		
 		SET @batch_start_time = GETDATE();
 		SET @start_time = GETDATE();
 		PRINT '>> Truncating Table: bronze.crm_cust_info';
 		TRUNCATE TABLE bronze.crm_cust_info;
 
-		--Insert the data to the table
 		PRINT '>> Inserting Data Into: bronze.crm_cust_info';
 		BULK INSERT bronze.crm_cust_info
 		FROM 'F:\sql\dwh_project\datasets\source_crm\cust_info.csv'
