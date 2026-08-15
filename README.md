@@ -14,24 +14,6 @@ The project follows the **Medallion Architecture** pattern:
 
 ---
 
-## 📁 Repository Structure
-
-```
-├── datasets/
-│   ├── source_crm/          # Raw CSV files from the CRM system
-│   │   ├── cust_info.csv
-│   │   ├── prd_info.csv
-│   │   └── sales_details.csv
-│   └── source_erp/          # Raw CSV files from the ERP system
-│       ├── cust_az12.csv
-│       ├── loc_a101.csv
-│       └── px_cat_g1v2.csv
-├── scripts/
-│   └── bronze/
-│       └── proc_load_bronze.sql  # Stored procedure for Bronze Layer ingestion
-└── README.md
-```
-
 ## 🚀 Getting Started
 Prerequisites
  * Database Engine: Microsoft SQL Server (2016 or higher recommended)
