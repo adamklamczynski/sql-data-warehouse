@@ -2,7 +2,7 @@
 
 ![SQL](https://img.shields.io/badge/Language-SQL-blue.svg)
 ![Data Warehouse](https://img.shields.io/badge/Domain-Data_Engineering-orange.svg)
-![Database](https://img.shields.io/badge/Database-PostgreSQL%2FSQL_Server-green.svg)
+![Database](https://img.shields.io/badge/Database-SQL_Server-green.svg)
 ![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)
 
 ## 📌 Overview
