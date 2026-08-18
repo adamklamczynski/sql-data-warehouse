@@ -8,6 +8,7 @@
 ## 📌 Overview
 
 The **`sql-data-warehouse`** repository contains a end-to-end Data Warehouse solution built using SQL. The goal of this project is to transform raw transactional data (OLTP) into an optimized analytical architecture (OLAP) based on a Dimensional Model (Star Schema / Snowflake Schema), enabling efficient reporting, business intelligence, and data analytics.
+Designed as a portfolio project, it highlights industry best practies in data engineering and analytisc.
 
 ---
 
@@ -18,11 +19,13 @@ The project implements a multi-layer data flow pattern:
 <img width="1192" height="702" alt="data_architecture" src="https://github.com/user-attachments/assets/57d9048b-4df3-4e3d-b757-e90c07e0a880" />
 
 
+---
 
-### 📊 Data Modeling
-* **Fact Tables:** Store numeric metrics and business event transactions (e.g., sales, orders, events).
-* **Dimension Tables:** Store business context (e.g., customers, products, date/time, location).
-* **Slowly Changing Dimensions (SCD):** Implemented SCD Type 1 and Type 2 to manage historical changes over time.
+## 📊 Project Overview
+* **Data Architecture:** Designing a Modern Data Warehouse using Medallion Architecture - Bronze, Silver, Gold Layer.
+* **ETL Pipes:** Extracting, transforming and loading data from source system into the warehouse.
+* **Data Modeling** Developing fact and dimension tables optimized for analytical queries
+* **Analytics & Reporting:** Creating SQL-based reports and dashboards for actionable insights.
 
 ---
 
@@ -67,38 +70,15 @@ sql-data-warehouse
 ```
 ---
 
-## 🚀 Getting Started
+## 🚀Project Requirements
+Building the Data Warehouse - Data Engineering
+Designing a modern data warehouse using SQL Server to integrate sales data, enabling analytical reporting and informed decision-making.
 
-### Prerequisites
-* A Relational Database Management System (RDBMS) such as **MS SQL Server**.
-* A SQL client tool (e.g., *SQL SSMS 22*, *pgAdmin*, *Azure Data Studio*).
-
-## 📈 Sample Analytical Query
-
-Below is an example query aggregating sales performance by product category:
-
-```sql
-SELECT DISTINCT
-	YEAR(fs.order_date) AS sales_year,
-	dp.category,
-	COUNT(fs.order_number) OVER(PARTITION BY dp.category, YEAR(order_date)) AS total_orders,
-	SUM(fs.sales_amount) OVER(PARTITION BY YEAR(fs.order_date)) AS yearly_total_revenue
-FROM gold.fact_sales fs
-LEFT JOIN gold.dim_products dp
-ON fs.product_key = dp.product_key
-ORDER BY 
-	dp.category ASC,
-	yearly_total_revenue DESC;
-```
-
----
-
-## 🛡️ Data Quality & Validation
-
-The project incorporates data validation scripts to ensure warehouse reliability:
-- Primary key uniqueness & non-null constraints.
-- Foreign key integrity checks between facts and dimensions.
-- Range and domain validation (e.g., price > 0, quantity >= 0, valid date ranges).
+**Specifications**
+* Import data from two source system (CRM and ERP) provides as CSV files.
+* Cleansing and elimination of data inconsistencies.
+* Combining both tables into a single, user-friendly table.
+* Focus solely on current data; historical data is not requested.
 
 ---
 
